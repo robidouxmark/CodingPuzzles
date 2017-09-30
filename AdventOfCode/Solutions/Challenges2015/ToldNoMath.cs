@@ -2,7 +2,7 @@
 {
     public class ToldNoMath
     {
-        public static int CalculateTotalSurfaceAreaWithSlack(int[,] boxes)
+        public static int CalculateSumOfSurfaceAreaWithSlack(int[,] boxes)
         {
             var totalSurfaceArea = 0;
 
@@ -14,6 +14,33 @@
             }
 
             return totalSurfaceArea;
+        }
+
+        public static int CalculateSumOfPerimeterOfSmallestSide(int[,] boxes)
+        {
+            var perimeterSum = 0;
+
+            for (var row = 0; row < boxes.Length / 3; row++)
+            {
+                ArrangeBoxOnSmallestSide(boxes, row);
+
+                perimeterSum += 2 * (boxes[row, 0] + boxes[row, 1]);
+            }
+
+            return perimeterSum;
+        }
+
+
+        public static int CalculateSumOfVolume(int[,] boxes)
+        {
+            var volumeSum = 0;
+
+            for (var row = 0; row < boxes.Length / 3; row++)
+            {
+                volumeSum += boxes[row, 0] * boxes[row, 1] * boxes[row, 2];
+            }
+
+            return volumeSum;
         }
 
         private static void ArrangeBoxOnSmallestSide(int[,] boxes, int boxNumber)

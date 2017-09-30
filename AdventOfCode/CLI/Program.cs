@@ -14,7 +14,8 @@ namespace AdventOfCode.CLI
 
             var DayTwoInput = File.ReadAllLines($"Inputs\\{nameof(ToldNoMath)}.txt");
             var boxes = ParseDayTwoInput(DayTwoInput);
-            Console.WriteLine($"The solution to Day 2 Part One is: {ToldNoMath.CalculateTotalSurfaceAreaWithSlack(boxes)}");
+            Console.WriteLine($"The solution to Day 2 Part One is: {ToldNoMath.CalculateSumOfSurfaceAreaWithSlack(boxes)}");
+            Console.WriteLine($"The solution to Day 2 Part Two is: {ToldNoMath.CalculateSumOfPerimeterOfSmallestSide(boxes) + ToldNoMath.CalculateSumOfVolume(boxes)}");
 
             Console.ReadLine();
         }
