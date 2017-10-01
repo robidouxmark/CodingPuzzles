@@ -16,6 +16,10 @@ namespace AdventOfCode.CLI
             var boxes = ParseDayTwoInput(DayTwoInput);
             Console.WriteLine($"The solution to Day 2 Part One is: {ToldNoMath.CalculateSumOfSurfaceAreaWithSlack(boxes)}");
             Console.WriteLine($"The solution to Day 2 Part Two is: {ToldNoMath.CalculateSumOfPerimeterOfSmallestSide(boxes) + ToldNoMath.CalculateSumOfVolume(boxes)}");
+            
+            var DayThreeInput = File.ReadAllText($"Inputs\\{nameof(HousesInAVacuum)}.txt");
+            Console.WriteLine($"The solution to Day 3 Part One is: {HousesInAVacuum.UniqueStopsMade(DayThreeInput, 1)}");
+            Console.WriteLine($"The solution to Day 3 Part Two is: {HousesInAVacuum.UniqueStopsMade(DayThreeInput, 2)}");
 
             Console.ReadLine();
         }
